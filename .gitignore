@@ -7,10 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# npm dependencies
 node_modules
 dist
 dist-ssr
 *.local
+
+# Env
+.env
+.env.local
 
 # macOS
 .DS_Store
