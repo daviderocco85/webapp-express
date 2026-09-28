@@ -5,6 +5,8 @@ import { connection } from './config/db.js';
 const app = express();
 const port = env.SERVE_PORT;
 
+app.use(express.static('public'));
+
 // Index
 app.get('/', async (req, res) => {
     const sql = 'SELECT * FROM monuments';
