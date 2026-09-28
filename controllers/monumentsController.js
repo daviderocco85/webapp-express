@@ -1,11 +1,15 @@
 import { connection } from '../config/db.js';
 
+// Logica index di tutti i monumenti
+
 export const getAll = async (req, res) => {
     const sql = 'SELECT * FROM monuments';
     const [results] = await connection.query(sql);
 
     res.json(results);
 };
+
+// Logica show di un id di uno specifico monumento con relativa recensione
 
 export const getById = async (req, res) => {
     const id = Number(req.params.id);
