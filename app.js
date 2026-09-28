@@ -1,9 +1,16 @@
 import express from 'express';
-const app = express();
-const port = 3000;
+import { env } from './config/env.js';
+import { connection } from './config/db.js';
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+const app = express();
+const port = env.SERVE_PORT;
+
+// Index
+app.get('/', async (req, res) => {
+    const sql = 'SELECT * FROM monuments';
+    const [results] = await connection.query(sql);
+
+    res.json(results);
 });
 
 app.listen(port, () => {
