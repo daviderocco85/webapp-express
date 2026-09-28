@@ -8,5 +8,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.24.4"
   }
 }
