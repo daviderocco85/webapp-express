@@ -2,7 +2,7 @@
 
 Sviluppo del back-end di una Web App realizzata con Express.js, dedicata a più bei monumenti d'Italia corredata dalle relative recensioni.
 
-# Obiettivi
+## Obiettivi
 
 - Creazione di un database con **MySQL Workbench**.
 - Creazione di una nuova applicazione **Express.js**.
