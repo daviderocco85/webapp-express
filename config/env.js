@@ -4,7 +4,8 @@ const {
     DB_PORT,
     DB_USER,
     DB_PASSWORD,
-    DB_NAME
+    DB_NAME,
+    FE_ORIGIN
 } = process.env;
 
 const quit = message => {
@@ -54,11 +55,17 @@ if (DB_NAME === null || DB_NAME === undefined) {
     quit('Variable DB_NAME missing');
 }
 
+// FE_ORIGIN
+if (FE_ORIGIN === null || FE_ORIGIN === undefined) {
+    quit('Variable FE_ORIGIN missing');
+}
+
 export const env = {
     SERVE_PORT: servePort,
     DB_HOST,
     DB_PORT: dbPort,
     DB_USER,
     DB_PASSWORD,
-    DB_NAME
+    DB_NAME,
+    FE_ORIGIN
 };
