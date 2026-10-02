@@ -28,7 +28,7 @@ export const getById = async (req, res) => {
     }
 
     const sqlReviews = `
-       SELECT reviewer_name, vote, text
+       SELECT id, reviewer_name, vote, text
        FROM reviews
        WHERE monument_id = ?
        `;
