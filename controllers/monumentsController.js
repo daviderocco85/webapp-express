@@ -19,7 +19,8 @@ export const getById = async (req, res) => {
         return;
     }
 
-    const sqlMonument = 'SELECT * FROM monuments WHERE id = ?';
+
+    const sqlMonument = 'SELECT m.*, round(avg(r.vote)) average_vote FROM monuments m JOIN reviews r ON r.monument_id = m.id WHERE m.id = ?'
     const [[resultMonument]] = await connection.query(sqlMonument, [id]);
 
     if (resultMonument === undefined) {
