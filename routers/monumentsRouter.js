@@ -7,5 +7,7 @@ export const monumentsRouter = express.Router();
 monumentsRouter.get('/', monumentsController.getAll);
 
 // Show del monumento con specifico id
-monumentsRouter.get('/:id', monumentsController.getById);
+monumentsRouter.get('/detail/:id', monumentsController.getById);
 
+// Store del monumento
+monumentsRouter.post('/:id/reviews', monumentsController.create);
