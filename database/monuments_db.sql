@@ -13,16 +13,18 @@ USE monuments_db;
 DROP TABLE IF EXISTS monuments;
 
 CREATE TABLE monuments (
-id INT NOT NULL AUTO_INCREMENT,
-monument VARCHAR(255) NOT NULL,
-city VARCHAR(255) NOT NULL,
-region VARCHAR(255) DEFAULT NULL,
-construction_year INT DEFAULT NULL,
-abstract TEXT,
-image VARCHAR(255) DEFAULT NULL,
-created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (id)
+    id INT NOT NULL AUTO_INCREMENT,
+    monument VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    region VARCHAR(255) DEFAULT NULL,
+    construction_year VARCHAR(50) DEFAULT NULL,
+    abstract TEXT,
+    image VARCHAR(255) DEFAULT NULL,
+    duration_visit INT DEFAULT NULL,
+    architectural_style VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ------------------------------------------------------
@@ -30,87 +32,107 @@ PRIMARY KEY (id)
 -- ------------------------------------------------------
 
 INSERT INTO monuments
-(monument, city, region, construction_year, abstract, image)
+(monument, city, region, construction_year, abstract, image, duration_visit, architectural_style)
 VALUES
 (
     'Colosseo',
     'Roma',
     'Lazio',
-    80,
+    '80 d.C.',
     'Iconico anfiteatro romano e simbolo della capitale italiana.',
-    'colosseo.jpg'
+    'colosseo.jpg',
+    90,
+    'Architettura romana'
 ),
 (
     'Torre di Pisa',
     'Pisa',
     'Toscana',
-    1372,
+    '1173-1372 d.C.',
     'Celebre campanile inclinato conosciuto in tutto il mondo.',
-    'torre_pisa.jpg'
+    'torre_pisa.jpg',
+    60,
+    'Romanico pisano'
 ),
 (
     'Duomo di Milano',
     'Milano',
     'Lombardia',
-    1965,
+    '1386-1965 d.C.',
     'La più grande chiesa gotica italiana.',
-    'duomo_milano.jpg'
+    'duomo_milano.jpg',
+    90,
+    'Gotico internazionale'
 ),
 (
     'Arena di Verona',
     'Verona',
     'Veneto',
-    30,
+    '30 d.C.',
     'Anfiteatro romano ancora utilizzato per concerti e opere.',
-    'arena_verona.jpg'
+    'arena_verona.jpg',
+    75,
+    'Architettura romana'
 ),
 (
     'Reggia di Caserta',
     'Caserta',
     'Campania',
-    1845,
+    '1752-1845 d.C.',
     'Splendida residenza reale con immensi giardini.',
-    'reggia_caserta.jpg'
+    'reggia_caserta.jpg',
+    180,
+    'Barocco e Neoclassicismo'
 ),
 (
     'Basilica di San Marco',
     'Venezia',
     'Veneto',
-    1094,
-    'Capolavoro dell architettura bizantina.',
-    'san_marco.jpg'
+    '1063-1094 d.C.',
+    'Capolavoro dell''architettura bizantina.',
+    'san_marco.jpg',
+    90,
+    'Bizantino'
 ),
 (
     'Valle dei Templi',
     'Agrigento',
     'Sicilia',
-    430,
+    'VI-V secolo a.C.',
     'Importante complesso archeologico della Magna Grecia.',
-    'valle_templi.jpg'
+    'valle_templi.jpg',
+    150,
+    'Architettura greca dorica'
 ),
 (
     'Castel del Monte',
     'Andria',
     'Puglia',
-    1240,
-    'Castello ottagonale voluto dall imperatore Federico II.',
-    'castel_del_monte.jpg'
+    '1240-1250 d.C.',
+    'Castello ottagonale voluto dall''imperatore Federico II.',
+    'castel_del_monte.jpg',
+    90,
+    'Architettura medievale'
 ),
 (
-    'Basilica di Santa Maria del Fiore',
+    'Santa Maria del Fiore',
     'Firenze',
     'Toscana',
-    1436,
-    'Celebre cattedrale di Firenze, capolavoro dell architettura gotica italiana e rinascimentale.',
-    'santa_maria_del_fiore.jpg'
+    '1296-1436 d.C.',
+    'Celebre cattedrale di Firenze, capolavoro dell''architettura gotica italiana e rinascimentale.',
+    'santa_maria_del_fiore.jpg',
+    120,
+    'Gotico e Rinascimentale'
 ),
 (
     'Mole Antonelliana',
     'Torino',
     'Piemonte',
-    1889,
+    '1863-1889 d.C.',
     'Edificio simbolo della città di Torino.',
-    'mole_antonelliana.jpg'
+    'mole_antonelliana.jpg',
+    75,
+    'Neoclassico e Neogotico'
 );
 
 -- ------------------------------------------------------
